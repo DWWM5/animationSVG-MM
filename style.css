@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box; /* Utilisation du modèle de boîte "border-box" pour le dimensionnement, incluant les marges et le padding dans le calcul des dimensions */
+    margin: 0; /* Suppression de toutes les marges par défaut */
+    padding: 0; /* Suppression de tout padding par défaut */
+}
+body {
+    background: radial-gradient(circle at bottom, #364156 0%, #0c1753 100%);
+    /* Crée un dégradé radial avec un cercle en bas et deux couleurs */
+    height: 100vh; /* Hauteur de la page équivalente à 100% de la hauteur de la fenêtre visible */
+    overflow: hidden; /* Cache tout contenu débordant de la page */
+    display: flex; /* Utilisation du modèle de boîte flexible pour le contenu du corps */
+    justify-content: center;
+    align-items: center;
+}
+circle {
+    fill: none; /* Pas de remplissage (transparent) */
+    stroke: #17A398;
+    stroke-width: 10px; /* Largeur du contour du cercle */
+    stroke-dasharray: 100 100; /* Crée un contour pointillé : 100px tracés, 100px vides */
+    stroke-dashoffset: 70; /* Décalage initial des pointillés */
+    animation: rotation 2000ms ease-in-out infinite alternate;     /* Animation nommée "rotation" avec une durée de 2000 ms (2 secondes), une accélération et une répétition infinie en alternance */
+}
+svg {
+    transform: translateX(-50px); /* Décalage horizontal de -50 pixels */
+    filter: drop-shadow(100px 0 0 #87B37A); /* Applique une ombre portée décalée horizontalement de 100 pixels vers la droite, sans décalage vertical, de couleur #00ccff */
+} 
+@keyframes rotation {
+    0% {
+        /* Au début de l'animation, définir la longueur et le décalage des pointillés */
+        stroke-dasharray: 100 100;
+        stroke-dashoffset: 70;
+    }
+    100% {
+        /* À la fin de l'animation, définir une longueur et un décalage différents pour créer un effet d'animation */
+        stroke-dasharray: 20 20;
+        stroke-dashoffset: -600;
+    }
+}
